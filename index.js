@@ -11,8 +11,33 @@ const dadosCardControleMedicamentos = {
     ],
     descricao: `O sistema de Controle de Medicamentos apresenta o conceito de gerenciamento de um posto de saúde, com o controle de fornecimento, estoque, funcionários, pacientes e retirada de prescrições — com foco na rastreabilidade das movimentações de estoque.`
 };
+const dadosCarde_Agenda = {
+    titulo: 'E-Agenda',
+    imagem: './assets/e_Agenda.png',
+    gif: 'https://imgur.com/hg2U6Lg.gif',
+    urlRepositorio: 'https://github.com/felpss0/e-Agenda.git',
+    stack: [
+        'https://skillicons.dev/icons?i=html&theme=light',
+        'https://skillicons.dev/icons?i=css&theme=light',
+        'https://skillicons.dev/icons?i=cs&theme=light',
+        'https://skillicons.dev/icons?i=net&theme=light',
+    ],
+    descricao: `O sistema E-Agenda faz o controle das atividades do usario incluindo tarefas, compromissos, contatos, despesas e categorias para as despesas.`
+};
 
-
+const dadosCardControleDeBar = {
+    titulo: 'Controle De Bar',
+    imagem: './assets/Controle-de-Bar.png',
+    gif: 'https://i.imgur.com/EqKQbR9.gif',
+    urlRepositorio: 'https://github.com/felpss0/controle-de-bar-2025',
+    stack: [
+        'https://skillicons.dev/icons?i=html&theme=light',
+        'https://skillicons.dev/icons?i=css&theme=light',
+        'https://skillicons.dev/icons?i=cs&theme=light',
+        'https://skillicons.dev/icons?i=net&theme=light',
+    ],
+    descricao: `O sistema Controle de Bar apresenta o conceito de gerenciamento de um Bar com controle de mesas, garçons, produtos e contas.`
+};
 
 let cardSelecionado;
 
@@ -50,13 +75,21 @@ function selecionarPrimeiroCard() {
     carregarDadosCardAtual();
 }
 
-//function selecionarSegundoCard() {
-//    if (cardSelecionado == dadosCardGestaoEquipamentos)
-//        return;
+function selecionarSegundoCard() {
+    if (cardSelecionado == dadosCarde_Agenda)
+        return;
 
-//    cardSelecionado = dadosCardGestaoEquipamentos;
-//    carregarDadosCardAtual();
-//}
+    cardSelecionado = dadosCarde_Agenda;
+    carregarDadosCardAtual();
+}
+
+function selecionarTerceiroCard() {
+    if (cardSelecionado == dadosCardControleDeBar)
+        return;
+
+    cardSelecionado = dadosCardControleDeBar;
+    carregarDadosCardAtual();
+}
 
 function abrirModalProjeto() {
     document.getElementById('portfolioModalLabel').textContent = cardSelecionado.titulo;
@@ -65,14 +98,20 @@ function abrirModalProjeto() {
 
 function main() {
     const btnSelecionarPrimeiroCard = document.getElementById("btnSelecionarPrimeiroCard");
+    const btnSelecionarSegundoCard = document.getElementById("btnSelecionarSegundoCard");
+    const btnSelecionarTerceiroCard = document.getElementById("btnSelecionarTerceiroCard");
     
     const btnVerProjeto = document.getElementById("btnVerProjeto")
 
     btnSelecionarPrimeiroCard.addEventListener('click', selecionarPrimeiroCard);
+    btnSelecionarSegundoCard.addEventListener('click', selecionarSegundoCard);
+    btnSelecionarTerceiroCard.addEventListener('click', selecionarTerceiroCard);
     
     btnVerProjeto.addEventListener('click', abrirModalProjeto);
 
     selecionarPrimeiroCard();
+    selecionarSegundoCard();
+    selecionarTerceiroCard();
 };
 
 document.addEventListener('DOMContentLoaded', main);
