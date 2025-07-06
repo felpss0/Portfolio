@@ -110,8 +110,7 @@ function main() {
     btnVerProjeto.addEventListener('click', abrirModalProjeto);
 
     selecionarPrimeiroCard();
-    selecionarSegundoCard();
-    selecionarTerceiroCard();
+    
 };
 
 document.addEventListener('DOMContentLoaded', main);
